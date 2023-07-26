@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".screen.sign_up.SignUpActivity">
+
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:contentDescription="@null"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/bg_signup_linear_gradient"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/imb_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/common_24dp"
+        android:layout_marginTop="56dp"
+        android:background="@null"
+        android:contentDescription="@null"
+        android:src="@drawable/ic_back_white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_sign_up"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/common_24dp"
+        android:layout_marginBottom="@dimen/common_bottom_bar"
+        android:fontFamily="@font/lato_medium"
+        android:text="@string/sign_up"
+        android:textColor="@color/white"
+        android:textSize="@dimen/common_text_16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/imb_next"
+        android:layout_width="54dp"
+        android:layout_height="54dp"
+        android:layout_marginEnd="@dimen/common_24dp"
+        android:background="@drawable/bg_circle_border"
+        android:contentDescription="@null"
+        android:src="@drawable/ic_next"
+        app:layout_constraintBottom_toBottomOf="@id/tv_sign_up"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tv_sign_up" />
+
+    <TextView
+        android:id="@+id/tv_by_clicking"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/common_30dp"
+        android:fontFamily="@font/lato_medium"
+        android:lineSpacingExtra="4dp"
+        android:textColor="@color/white_50"
+        android:textSize="@dimen/common_text_12sp"
+        app:layout_constraintBottom_toTopOf="@id/tv_sign_up"
+        app:layout_constraintEnd_toEndOf="@id/imb_next"
+        app:layout_constraintStart_toStartOf="@id/tv_sign_up" />
+
+    <CheckBox
+        android:id="@+id/cb_over16"
+        android:layout_width="@dimen/common_24dp"
+        android:layout_height="@dimen/common_24dp"
+        android:layout_marginBottom="@dimen/common_30dp"
+        android:background="@drawable/bg_age_checked"
+        android:button="@null"
+        android:contentDescription="@null"
+        app:layout_constraintBottom_toTopOf="@id/tv_by_clicking"
+        app:layout_constraintStart_toStartOf="@id/tv_sign_up" />
+
+    <TextView
+        android:id="@+id/tv_over16"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/common_8dp"
+        android:fontFamily="@font/lato_medium"
+        android:text="@string/i_am_over_16"
+        android:textColor="@color/white"
+        android:textSize="@dimen/common_text_14sp"
+        app:layout_constraintBottom_toBottomOf="@id/cb_over16"
+        app:layout_constraintStart_toEndOf="@id/cb_over16"
+        app:layout_constraintTop_toTopOf="@id/cb_over16" />
+
+    <ProgressBar
+        android:id="@+id/pgb_password"
+        style="@android:style/Widget.Material.Light.ProgressBar.Horizontal"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginBottom="@dimen/common_50dp"
+        android:background="@color/white_43"
+        android:max="100"
+        android:progress="100"
+        android:progressTint="@color/purple"
+        app:layout_constraintBottom_toTopOf="@id/cb_over16"
+        app:layout_constraintEnd_toEndOf="@id/imb_next"
+        app:layout_constraintStart_toStartOf="@id/tv_sign_up" />
+
+    <TextView
+        android:id="@+id/tv_status_pass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/common_8dp"
+        android:textColor="@color/white_50"
+        android:textSize="@dimen/common_text_12sp"
+        app:layout_constraintEnd_toEndOf="@id/imb_next"
+        app:layout_constraintTop_toBottomOf="@id/pgb_password" />
+
+    <EditText
+        android:id="@+id/edt_password"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/common_10dp"
+        android:background="@null"
+        android:fontFamily="@font/lato_medium"
+        android:hint="@string/your_password_hint"
+        android:imeOptions="actionDone"
+        android:inputType="textPassword"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white_50"
+        android:textCursorDrawable="@color/purple"
+        android:textSize="@dimen/common_text_16sp"
+        app:layout_constraintBottom_toTopOf="@id/pgb_password"
+        app:layout_constraintEnd_toStartOf="@id/fr_view_pass"
+        app:layout_constraintStart_toStartOf="@id/tv_sign_up" />
+
+    <FrameLayout
+        android:id="@+id/fr_view_pass"
+        android:layout_width="@dimen/common_30dp"
+        android:layout_height="0dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@id/edt_password"
+        app:layout_constraintEnd_toEndOf="@id/imb_next"
+        app:layout_constraintStart_toEndOf="@id/edt_password"
+        app:layout_constraintTop_toTopOf="@id/edt_password">
+
+        <ImageView
+            android:id="@+id/imvViewPass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|end"
+            android:contentDescription="@null"
+            android:src="@drawable/ic_show_pass" />
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/tv_hint_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/common_10dp"
+        android:fontFamily="@font/lato_medium"
+        android:text="@string/your_password"
+        android:textColor="@color/white_50"
+        android:textSize="@dimen/common_text_12sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@id/edt_password"
+        app:layout_constraintStart_toStartOf="@id/tv_sign_up" />
+
+    <View
+        android:id="@+id/line_email"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginBottom="@dimen/common_26dp"
+        android:background="@color/purple"
+        app:layout_constraintBottom_toTopOf="@id/tv_hint_password"
+        app:layout_constraintEnd_toEndOf="@id/imb_next"
+        app:layout_constraintStart_toStartOf="@id/tv_sign_up" />
+
+    <EditText
+        android:id="@+id/edt_email"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/common_10dp"
+        android:background="@null"
+        android:fontFamily="@font/lato_medium"
+        android:hint="@string/your_email_hint"
+        android:imeOptions="actionNext"
+        android:inputType="textEmailAddress"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white_50"
+        android:textCursorDrawable="@color/purple"
+        android:textSize="@dimen/common_text_16sp"
+        app:layout_constraintBottom_toTopOf="@id/line_email"
+        app:layout_constraintEnd_toEndOf="@id/imb_next"
+        app:layout_constraintStart_toStartOf="@id/tv_sign_up" />
+
+    <TextView
+        android:id="@+id/tv_hint_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/common_10dp"
+        android:fontFamily="@font/lato_medium"
+        android:text="@string/your_email"
+        android:textColor="@color/white_50"
+        android:textSize="@dimen/common_text_12sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@id/edt_email"
+        app:layout_constraintStart_toStartOf="@id/tv_sign_up" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp"
+        android:fontFamily="@font/lato_medium"
+        android:text="@string/let_s_get_you_started"
+        android:textColor="@color/white"
+        android:textSize="@dimen/common_text_22sp"
+        app:layout_constraintBottom_toTopOf="@id/tv_hint_email"
+        app:layout_constraintStart_toStartOf="@id/tv_sign_up" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

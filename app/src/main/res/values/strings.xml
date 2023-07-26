@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">Example App</string>
+
+    <string name="sign_up">Sign Up</string>
+    <string name="by_clicking"><![CDATA[<p>By clicking Sign Up, you are indicating that you have read and agree to the <a  href="">Terms of Service</a> and <a href="">Privacy Policy</a><p>]]></string>
+    <string name="i_am_over_16">I am over 16 years of age</string>
+    <string name="your_password">Your password</string>
+    <string name="your_email">Your email</string>
+    <string name="your_password_hint"><font size="12">Your password</font></string>
+    <string name="your_email_hint"><font size="12">Your email</font></string>
+    <string name="let_s_get_you_started">Let’s get you started!</string>
+    <string name="done">Done</string>
+    <string name="welcome_to">Welcome to Flutter Test</string>
+    <string name="desc">Please select categories what you would like to see on your feed. You can set this later on Filter.</string>
+
+    <string name="common_invalid_email">Your email address is invalid</string>
+    <string name="common_input_email">Please input your email address</string>
+    <string name="common_input_pass">Please input your password</string>
+
+    <string name="common_pass_at_least">Your password has at least 6 characters</string>
+    <string name="common_pass_up_to">Your password is up to 18 characters</string>
+
+    <string name="too_short">Too short</string>
+    <string name="week">Week</string>
+    <string name="fair">Fair</string>
+    <string name="good">Good</string>
+    <string name="strong">Strong</string>
+</resources>
