@@ -132,46 +132,36 @@ class SignUpActivity : BaseActivity(R.layout.activity_sign_up), OnClickListener 
         if (text.isEmpty()) {
             tvHintPassword.visibility = INVISIBLE
             frViewPassword.visibility = INVISIBLE
+            setProgressPassword(100, "", ContextCompat.getColor(this, R.color.purple))
         } else {
             tvHintPassword.visibility = VISIBLE
             frViewPassword.visibility = VISIBLE
             val length = text.length
             if (length < 6) {
-                tvStatusPassword.text = getString(R.string.too_short)
-                tvStatusPassword.setTextColor(ContextCompat.getColor(this, R.color.white_43))
-                pgbPassword.progress = 0
+                setProgressPassword(0, getString(R.string.too_short), ContextCompat.getColor(this, R.color.white_43))
             } else {
                 val isUpper = text.isUppercase()
                 val isDigit = text.isDigit()
                 val isSpecial = CommonUtils.isValidSpecial(text)
                 if (isUpper && !isDigit && !isSpecial) {
-                    tvStatusPassword.text = getString(R.string.fair)
-                    tvStatusPassword.setTextColor(ContextCompat.getColor(this, R.color.fair))
-                    pgbPassword.progress = 50
-                    pgbPassword.progressTintList =
-                        ColorStateList.valueOf(ContextCompat.getColor(this, R.color.fair))
+                    setProgressPassword(50, getString(R.string.fair), ContextCompat.getColor(this, R.color.fair))
                 } else if (isUpper && isDigit && !isSpecial) {
-                    tvStatusPassword.text = getString(R.string.good)
-                    tvStatusPassword.setTextColor(ContextCompat.getColor(this, R.color.purple))
-                    pgbPassword.progress = 75
-                    pgbPassword.progressTintList =
-                        ColorStateList.valueOf(ContextCompat.getColor(this, R.color.purple))
+                    setProgressPassword(75, getString(R.string.good), ContextCompat.getColor(this, R.color.purple))
                 } else if (isUpper && isDigit && isSpecial) {
-                    tvStatusPassword.text = getString(R.string.strong)
-                    tvStatusPassword.setTextColor(ContextCompat.getColor(this, R.color.strong))
-                    pgbPassword.progress = 100
-                    pgbPassword.progressTintList =
-                        ColorStateList.valueOf(ContextCompat.getColor(this, R.color.strong))
+                    setProgressPassword(100, getString(R.string.strong), ContextCompat.getColor(this, R.color.strong))
                 } else {
-                    tvStatusPassword.text = getString(R.string.week)
-                    tvStatusPassword.setTextColor(ContextCompat.getColor(this, R.color.week))
-                    pgbPassword.progress = 25
-                    pgbPassword.progressTintList =
-                        ColorStateList.valueOf(ContextCompat.getColor(this, R.color.week))
+                    setProgressPassword(25, getString(R.string.week), ContextCompat.getColor(this, R.color.week))
                 }
             }
 
         }
+    }
+
+    private fun setProgressPassword(progress: Int, status: String, statusColor: Int) {
+        tvStatusPassword.text = status
+        tvStatusPassword.setTextColor(statusColor)
+        pgbPassword.progress = progress
+        pgbPassword.progressTintList = ColorStateList.valueOf(statusColor)
     }
 
     override fun onClick(v: View?) {
